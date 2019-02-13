@@ -5,7 +5,7 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
     "typecheck": "tsc --pretty --noEmit",
