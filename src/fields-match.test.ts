@@ -1,40 +1,21 @@
 import { validateFieldsMatch } from './fields-match';
-import { FieldValidationResult } from 'lc-form-validation';
 
 describe('validateFieldsMatch', () => {
-  it('should invalidate when undefined or null input', () => {
-    const firstField = undefined;
-    const secondField = undefined;
-
-    let result = validateFieldsMatch({ first: firstField, second: secondField }, null, null) as FieldValidationResult;
-    expect(result.succeeded).toBeFalsy();
-    const testFields = {
-      first: null,
-      second: null,
-    };
-    result = validateFieldsMatch(testFields, null, null) as FieldValidationResult;
-    expect(result.succeeded).toBeFalsy();
-  });
-
-  it('should invalidate null input', () => {
+  it('should invalidate when undefined input', () => {
     // Arrange
-    const firstField = null;
-    const secondField = null;
-
+    const viewModel = { password: undefined, confirmPassword: undefined };
     // Act
-    const result = validateFieldsMatch({ first: firstField, second: secondField }, null, null) as FieldValidationResult;
-
+    const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
     // Assert
     expect(result.succeeded).toBeFalsy();
   });
 
-  it('should invalidate empty input', () => {
+  it('should invalidate when null input', () => {
     // Arrange
-    const firstField = '';
-    const secondField = '';
+    const viewModel = { password: null, confirmPassword: null };
 
     // Act
-    const result = validateFieldsMatch({ first: firstField, second: secondField }, null, null) as FieldValidationResult;
+    const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
 
     // Assert
     expect(result.succeeded).toBeFalsy();
@@ -42,11 +23,10 @@ describe('validateFieldsMatch', () => {
 
   it('should invalidate when do not match inputs', () => {
     // Arrange
-    const firstField = '12345';
-    const secondField = '67890';
+    const viewModel = { password: '12345', confirmPassword: '12346' };
 
     // Act
-    const result = validateFieldsMatch({ first: firstField, second: secondField }, null, null) as FieldValidationResult;
+    const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
 
     // Assert
     expect(result.succeeded).toBeFalsy();
@@ -54,11 +34,10 @@ describe('validateFieldsMatch', () => {
 
   it('should validate when match inputs', () => {
     // Arrange
-    const firstField = '12345678';
-    const secondField = '12345678';
+    const viewModel = { password: '12345', confirmPassword: '12345' };
 
     // Act
-    const result = validateFieldsMatch({ first: firstField, second: secondField }, null, null) as FieldValidationResult;
+    const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
 
     // Assert
     expect(result.succeeded).toBeTruthy();
