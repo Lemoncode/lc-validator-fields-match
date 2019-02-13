@@ -5,9 +5,5 @@
  */
 import FieldValidationResult from 'lc-form-validation';
 
-export interface Fields {
-  first: string;
-  second: string;
-}
 export declare const VALIDATION_TYPE : string;
-export function validateFieldsMatch(value: Fields): FieldValidationResult;
+export function validateFieldsMatch(value: string, vm: any, key: typeof vm): FieldValidationResult;
