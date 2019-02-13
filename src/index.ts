@@ -1,1 +1,1 @@
-export { validateFieldsMatch } from './validator-fields-match';
+export { validateFieldsMatch } from './fields-match';

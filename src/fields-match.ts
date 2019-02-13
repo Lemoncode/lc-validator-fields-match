@@ -1,14 +1,17 @@
 import { FieldValidationFunction, FieldValidationResult } from 'lc-form-validation';
 
-const isString = (input: any) => typeof input === 'string' || input instanceof String;
 const defaultInvalidMessage = 'Fields do not match';
+
+const isString = (input: any) => typeof input === 'string' || input instanceof String;
 
 export interface Fields {
   first: string;
   second: string;
 }
 
-export const validateFieldsMatch: FieldValidationFunction<Fields> = ({ first, second }) => {
+export const VALIDATION_TYPE = 'FIELDS-MATCH';
+
+export const validateFieldsMatch: FieldValidationFunction = ({ first, second }) => {
   const result = new FieldValidationResult();
   let isValid = false;
 
@@ -16,6 +19,7 @@ export const validateFieldsMatch: FieldValidationFunction<Fields> = ({ first, se
     isValid = first === second;
   }
 
+  result.type = VALIDATION_TYPE;
   result.succeeded = isValid;
   result.errorMessage = isValid ? '' : defaultInvalidMessage;
 

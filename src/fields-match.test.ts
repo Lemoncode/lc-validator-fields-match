@@ -1,4 +1,4 @@
-import { validateFieldsMatch } from './validator-fields-match';
+import { validateFieldsMatch } from './fields-match';
 import { FieldValidationResult } from 'lc-form-validation';
 
 describe('validateFieldsMatch', () => {
