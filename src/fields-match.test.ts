@@ -17,18 +17,13 @@ describe('validateFieldsMatch test', () => {
       } as FieldValidationResult);
     });
 
-    it('should validate when customParam is belong viewmodel', () => {
+    it('should validate when customParam is belong viewmodel and it is match', () => {
       // Arrange
       const viewModel = { password: 'correct', confirmPassword: 'correct' };
       // Act
       const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
       // Assert
-      expect(result).toEqual({
-        errorMessage: '',
-        key: '',
-        succeeded: true,
-        type: VALIDATION_TYPE,
-      } as FieldValidationResult);
+      expect(result.succeeded).toBeTruthy();
     });
 
     describe('nested object =>', () => {
@@ -89,7 +84,7 @@ describe('validateFieldsMatch test', () => {
 
   it('should invalidate when undefined input', () => {
     // Arrange
-    const viewModel = { password: undefined, confirmPassword: undefined };
+    const viewModel = { password: 'correct', confirmPassword: undefined };
     // Act
     const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
     // Assert
@@ -98,16 +93,7 @@ describe('validateFieldsMatch test', () => {
 
   it('should invalidate when null input', () => {
     // Arrange
-    const viewModel = { password: null, confirmPassword: null };
-    // Act
-    const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
-    // Assert
-    expect(result.succeeded).toBeFalsy();
-  });
-
-  it('should invalidate when empty input', () => {
-    // Arrange
-    const viewModel = { password: '', confirmPassword: '' };
+    const viewModel = { password: 'correct', confirmPassword: null };
     // Act
     const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'password');
     // Assert
