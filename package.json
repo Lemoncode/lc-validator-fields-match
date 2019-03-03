@@ -1,6 +1,6 @@
 {
   "name": "lc-validator-fields-match",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -25,9 +25,7 @@
     "release": "npm publish ./build",
     "release:local": "npm install ./build -g"
   },
-  "dependencies": {
-    "lc-form-validation": "^2.0.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "lc-form-validation": "^2.0.0"
   },
