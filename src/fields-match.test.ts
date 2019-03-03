@@ -3,7 +3,7 @@ import { FieldValidationResult } from 'lc-form-validation';
 
 describe('validateFieldsMatch test', () => {
   describe('Group#1 => customParams:', () => {
-    it('should invalidate when customParam is no belong viewmodel', () => {
+    it('should invalidate when customParam does not belong viewmodel', () => {
       // Arrange
       const viewModel = { password: 'correct', confirmPassword: 'correct' };
       // Act
@@ -32,7 +32,7 @@ describe('validateFieldsMatch test', () => {
     });
 
     describe('nested object =>', () => {
-      it('should invalidate when nested customParam is no belong to viewmodel', () => {
+      it('should invalidate when nested customParam does not belong to viewmodel', () => {
         // Arrange
         const viewModel = { subObject: { password: 'correct', confirmPassword: 'correct' } };
         // Act
@@ -46,7 +46,7 @@ describe('validateFieldsMatch test', () => {
         } as FieldValidationResult);
       });
 
-      it('should invalidate when nested customParam is not match', () => {
+      it('should invalidate when nested customParam does not match', () => {
         // Arrange
         const viewModel = { subObject: { password: 'correct', confirmPassword: 'wrong' } };
         // Act
