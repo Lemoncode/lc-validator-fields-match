@@ -10,7 +10,7 @@ describe('validateFieldsMatch test', () => {
       const result = validateFieldsMatch(viewModel.confirmPassword, viewModel, 'wrong');
       // Assert
       expect(result).toEqual({
-        errorMessage: 'The field pass by customParams is wrong',
+        errorMessage: 'Fields do not match',
         key: '',
         succeeded: false,
         type: VALIDATION_TYPE,
@@ -34,7 +34,7 @@ describe('validateFieldsMatch test', () => {
         const result = validateFieldsMatch(viewModel.subObject.confirmPassword, viewModel, 'subObject.wrong');
         // Assert
         expect(result).toEqual({
-          errorMessage: 'The field pass by customParams is wrong',
+          errorMessage: 'Fields do not match',
           key: '',
           succeeded: false,
           type: VALIDATION_TYPE,

@@ -14,14 +14,16 @@ export const validateFieldsMatch = (value: string, vm: any, key: string): FieldV
 
   const nestedKeyResult = getNestedKey(vm, key);
   if (nestedKeyResult === undefined) {
-    fieldValidationResult.errorMessage = 'The field pass by customParams is wrong';
+    console.warn(`FieldMatch Validator: field id ${key} to compare not found`);
   } else {
     if (isString(value) && isString(nestedKeyResult)) {
       fieldsAreEqual = value === nestedKeyResult;
-      fieldValidationResult.errorMessage = fieldsAreEqual ? '' : defaultInvalidMessage;
+    } else {
+      console.warn('FieldMatch Validator: an error has ocurred');
     }
   }
 
+  fieldValidationResult.errorMessage = fieldsAreEqual ? '' : defaultInvalidMessage;
   fieldValidationResult.type = VALIDATION_TYPE;
   fieldValidationResult.succeeded = fieldsAreEqual;
 
