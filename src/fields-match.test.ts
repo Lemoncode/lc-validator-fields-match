@@ -2,7 +2,7 @@ import { validateFieldsMatch, VALIDATION_TYPE } from './fields-match';
 import { FieldValidationResult } from 'lc-form-validation';
 
 describe('validateFieldsMatch test', () => {
-  describe('Group#1 => customParams:', () => {
+  describe('customParams =>', () => {
     it('should invalidate when customParam does not belong viewmodel', () => {
       // Arrange
       const viewModel = { password: 'correct', confirmPassword: 'correct' };
