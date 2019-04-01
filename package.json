@@ -3,8 +3,18 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "lc-form-validation",
+    "form",
+    "validation",
+    "validator"
+  ],
+  "homepage": "https://github.com/Lemoncode/lc-validator-fields-match/blob/master/readme.md",
+  "author": "lc-form-validation validator for if two fields match",
+  "contributors": [
+    "Javier Calzado <javi.calzado@lemoncode.net> (https://github.com/fjcalzado)",
+    "Sara Lissette Luis Ibáñez <lissette.ibnz@gmail.com> (https://github.com/LissetteIbnz)"
+  ],
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",

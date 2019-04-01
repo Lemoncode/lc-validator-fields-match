@@ -1,11 +1,17 @@
 # lc-validator-fields-match
 
 This is a [lc-form-validation](https://github.com/Lemoncode/lcFormValidation) add-on that brings validation capabilities for:
-* Validate if two fields match.
+
+- Validate if two fields match.
 
 Please, refer to [lc-form-validation](https://github.com/Lemoncode/lcFormValidation) to know more.
 
+## Examples
+
+[Simple form](https://codesandbox.io/s/rmmnk45rqm)
+
 ## License
+
 [MIT](./LICENSE)
 
 # About Basefactor + Lemoncode
