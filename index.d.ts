@@ -6,5 +6,5 @@
  */
 import FieldValidationResult from 'lc-form-validation';
 
-export declare const VALIDATION_TYPE : string;
+export declare const VALIDATION_TYPE: string;
 export function validateFieldsMatch(value: string, vm: any, key: string): FieldValidationResult;

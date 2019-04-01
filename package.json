@@ -3,8 +3,18 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "lc-form-validation",
+    "form",
+    "validation",
+    "validator"
+  ],
+  "homepage": "https://github.com/Lemoncode/lc-validator-fields-match/blob/master/readme.md",
+  "author": "lc-form-validation validator for if two fields match",
+  "contributors": [
+    "Javier Calzado <javi.calzado@lemoncode.net> (https://github.com/fjcalzado)",
+    "Sara Lissette Luis Ibáñez <lissette.ibnz@gmail.com> (https://github.com/LissetteIbnz)"
+  ],
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
@@ -44,14 +54,22 @@
     "compression-webpack-plugin": "^2.0.0",
     "copyfiles": "^2.1.0",
     "cross-env": "^5.2.0",
+    "husky": "^1.3.1",
     "jest": "^23.6.0",
     "lc-form-validation": "^2.0.0",
     "prettier": "^1.14.3",
+    "pretty-quick": "^1.10.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "npm run typecheck && npm run test"
+    }
   }
 }

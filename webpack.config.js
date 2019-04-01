@@ -8,7 +8,10 @@ module.exports = env => {
   const mode = NODE_ENV || 'development';
   const prod = mode === 'production';
   const packageName = process.env.npm_package_name;
-  const packageNameCapital = packageName.split('-').map(capitalizeString).join('');
+  const packageNameCapital = packageName
+    .split('-')
+    .map(capitalizeString)
+    .join('');
   const packageVersion = JSON.stringify(process.env.npm_package_version).replace(/"/g, '');
   const filename = `${packageName}-${packageVersion}${prod ? '.min' : ''}.js`;
 
@@ -39,6 +42,6 @@ module.exports = env => {
         },
       ],
     },
-    plugins: prod ? [new CompressionPlugin()] : []
+    plugins: prod ? [new CompressionPlugin()] : [],
   };
 };
