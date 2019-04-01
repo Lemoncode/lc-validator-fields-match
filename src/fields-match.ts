@@ -8,6 +8,12 @@ const getNestedKey = (nestedObj: any, path: string) =>
 
 export const VALIDATION_TYPE = 'FIELDS_MATCH';
 
+/**
+ * Validate if two fields match.
+ * @param value Input value to match
+ * @param vm The viewmodel object (form)
+ * @param key The field path in the viewmodel to compare
+ */
 export const validateFieldsMatch = (value: string, vm: any, key: string): FieldValidationResult => {
   const fieldValidationResult: FieldValidationResult = new FieldValidationResult();
   let fieldsAreEqual = false;
