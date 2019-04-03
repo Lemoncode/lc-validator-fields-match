@@ -1,16 +1,34 @@
 {
   "name": "lc-validator-fields-match",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "lc-form-validation validator for if two fields match",
+  "files": [
+    "dist",
+    "es",
+    "lib",
+    "index.d.ts",
+    "LICENSE",
+    "package.json",
+    "readme.md"
+  ],
+  "browser": "lib/index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "index.d.ts",
+  "jsnext:main": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemoncode/lc-validator-fields-match.git"
+  },
   "keywords": [
     "lc-form-validation",
     "form",
     "validation",
-    "validator"
+    "validator",
+    "fields-match"
   ],
   "homepage": "https://github.com/Lemoncode/lc-validator-fields-match/blob/master/readme.md",
-  "author": "lc-form-validation validator for if two fields match",
+  "author": "Lemoncode",
   "contributors": [
     "Javier Calzado <javi.calzado@lemoncode.net> (https://github.com/fjcalzado)",
     "Sara Lissette Luis Ibáñez <lissette.ibnz@gmail.com> (https://github.com/LissetteIbnz)"
